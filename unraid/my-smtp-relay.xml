@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>smtp-relay</Name>
+  <Repository>bokazio/smtp-relay</Repository>
+  <Registry>https://hub.docker.com/r/bokazio/smtp-relay</Registry>
+  <Network>bridge</Network>
+  <MyIP />
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/bokazio/smtp-relay/issues</Support>
+  <Project>https://github.com/bokazio/smtp-relay</Project>
+  <Overview>A lightweight SMTP relay server designed for Docker environments. This image enables containers to send outgoing emails through two configurable modes:&#xD;
+&#xD;
+1. Direct Mode: Sends emails directly to recipients&#xD;
+2. Smart Host Mode: Relays mail through an intermediate SMTP server&#xD;
+&#xD;
+Based on Debian 12 with exim4-daemon-light, it provides a simple yet flexible email solution. Configure using environment variables for relay host, port, credentials, and network settings.&#xD;
+&#xD;
+For detailed configuration options and examples, visit:&#xD;
+https://github.com/bokazio/smtp-relay</Overview>
+  <Category>Productivity: Tools:</Category>
+  <WebUI />
+  <TemplateURL />
+  <Icon>https://raw.githubusercontent.com/bokazio/smtp-relay/refs/heads/main/unraid/icon.png</Icon>
+  <ExtraParams />
+  <PostArgs />
+  <CPUset />
+  <DateInstalled />
+  <DonateText>If you find this helpful, feel free to buy me a coffee ☕ or a beer 🍺 via PayPal</DonateText>
+  <DonateLink>https://www.paypal.me/kruegerj</DonateLink>
+  <Requires />
+  <Config Name="MAILNAME" Target="MAILNAME" Default="" Mode="" Description="Sets Exim's primary_hostname, defaults to server hostname" Type="Variable" Display="always" Required="false" Mask="false" />
+  <Config Name="RELAY_HOST" Target="RELAY_HOST" Default="" Mode="" Description="The remote SMTP server to use" Type="Variable" Display="always" Required="false" Mask="false" />
+  <Config Name="RELAY_PORT" Target="RELAY_PORT" Default="587" Mode="" Description="The remote SMTP server port" Type="Variable" Display="always" Required="false" Mask="false" />
+  <Config Name="RELAY_USERNAME" Target="RELAY_USERNAME" Default="" Mode="" Description="Username to authenticate against remote SMTP" Type="Variable" Display="always" Required="false" Mask="false" />
+  <Config Name="RELAY_PASSWORD" Target="RELAY_PASSWORD" Default="" Mode="" Description="Password to authenticate against remote SMTP" Type="Variable" Display="always" Required="false" Mask="true" />
+  <Config Name="RELAY_NETS" Target="RELAY_NETS" Default="10.0.0.0/8;172.16.0.0/12;192.168.0.0/16" Mode="" Description="Networks that can use the smart host (semicolon-separated)" Type="Variable" Display="always" Required="false" Mask="false" />
+</Container>
